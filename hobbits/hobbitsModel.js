@@ -9,7 +9,9 @@ module.exports = {
 };
 
 async function insert(hobbit) {
-  return null;
+  return db('hobbits')
+    .insert(hobbit, 'id')
+    .then(ids => findById(ids[0]))
 }
 
 async function update(id, changes) {
@@ -25,5 +27,5 @@ function getAll() {
 }
 
 function findById(id) {
-  return null;
+  return db('hobbits').where({ id }).first();
 }
