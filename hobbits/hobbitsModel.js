@@ -8,13 +8,13 @@ module.exports = {
   findById,
 };
 
-async function insert(hobbit) {
+function insert(hobbit) {
   return db('hobbits')
     .insert(hobbit, 'id')
     .then(ids => findById(ids[0]))
 }
 
-async function update(id, changes) {
+function update(id, changes) {
   return null;
 }
 
